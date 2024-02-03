@@ -58,27 +58,31 @@ h1{
 .estilocartas{
     display: flex;
     flex-direction: column;
-    background-color:#f4efe6;
-    width: 15rem;
-    height: 20rem;
+    background-color:#f4efe66a;
+    width: 17rem;
+    height: 30rem;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 } 
 
-.cont-titulo{
+.estilocartas h2{
     font-size: 1.3rem;
     text-align: center;
     margin-top: 10px;
 }
-.cont-url{
+
+.estilocartas img{
     display: flex;
-    width: 16rem;
-    justify-content: center;
+    width: 15rem;    
+    align-self: center;
 }
-.cont-año{
-    display: none;
+
+.estilocartas p{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
 }
 .cont-director{
     display: none;
