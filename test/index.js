@@ -22,22 +22,17 @@ class carritoCompra {
    }
 
    aplicarDescuento(porcentaje){ //aplicarDescuento(porcentaje): Aplica un descuento al total de la compra según el porcentaje especificado.
-        const total= this.calcularTotal;    
-    
-    if(total > 50 && total < 200){
-            porcentaje= 20;
-        } 
-        else if(total > 200){
-            porcentaje= 40;
-        }
-        else{
-            return ('No corresponde descuento');
-        };
+        const total= this.calcularTotal();  
 
-        const descuento = (total * porcentaje) / 100;
-        const totalcondescuento = total - descuento;
-        return totalcondescuento; 
-};
-}
+        if (isNaN(porcentaje) || typeof total !== 'number') {
+            throw new Error('Porcentaje o total no válidos');
+          }        
+                 
+          const descuento = (total * porcentaje) / 100;
+          const totalConDescuento = total - descuento;
+        
+          return totalConDescuento;
+        };
+        }
 
 module.exports = carritoCompra;

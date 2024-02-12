@@ -18,8 +18,17 @@ describe("La clase carritoCompra", () =>{
        const total = carrito.calcularTotal();
        expect(total).toBe(60);
    }) 
-
-   /* it("debería aplicar un descuento al total de la compra según el porcentaje especificado", () =>{
-        const carrito = new carritoCompra();
-    }); */
-});
+   it("debería aplicar un descuento al total de la compra según el porcentaje especificado", () => {
+    const carrito = new carritoCompra();
+    const producto = { name: 'Producto1', price: 20, quantity: 2 };
+    carrito.agregarProducto(producto);
+    const totalConDescuento = carrito.aplicarDescuento(10); 
+    expect(totalConDescuento).toBe(36); 
+  });
+  it("debería lanzar error si el porcentaje o total no es un número", () =>{
+    const carrito = new carritoCompra();
+    const producto = { name: 'Producto1', price: 20, quantity: 2 };
+    carrito.agregarProducto(producto);
+    expect(() => carrito.aplicarDescuento(isNaN)).toThrowError('Porcentaje o total no válidos');
+  });
+  });
