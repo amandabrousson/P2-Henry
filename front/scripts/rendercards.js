@@ -9,8 +9,8 @@ function renderCards(data) {
         const activityCard = document.createElement("div");
         activityCard.classList.add("estilocartas");
         activityCard.innerHTML = `
-            <h2><a href= "#">${element.title}</a></h2>
             <img src=${element.poster}></img>
+            <h2><a href= "#">${element.title}</a></h2>
             <p>${element.year}</p>
         `;
         container.appendChild(activityCard);

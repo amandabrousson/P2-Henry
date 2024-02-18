@@ -25,7 +25,7 @@ eval("const tempData = __webpack_require__(/*! ./tempData */ \"./scripts/tempDat
   \********************************/
 /***/ ((module) => {
 
-eval("// rendercards.js\r\n\r\n\r\nconst container = document.getElementById(\"cuerpo\");\r\n\r\nfunction renderCards(data) {\r\n\r\n    data.forEach(element => {\r\n        const activityCard = document.createElement(\"div\");\r\n        activityCard.classList.add(\"estilocartas\");\r\n        activityCard.innerHTML = `\r\n            <h2><a href= \"#\">${element.title}</a></h2>\r\n            <img src=${element.poster}></img>\r\n            <p>${element.year}</p>\r\n        `;\r\n        container.appendChild(activityCard);\r\n\r\n    });\r\n    \r\n}\r\n\r\nmodule.exports = renderCards;\n\n//# sourceURL=webpack://front/./scripts/rendercards.js?");
+eval("// rendercards.js\r\n\r\n\r\nconst container = document.getElementById(\"cuerpo\");\r\n\r\nfunction renderCards(data) {\r\n\r\n    data.forEach(element => {\r\n        const activityCard = document.createElement(\"div\");\r\n        activityCard.classList.add(\"estilocartas\");\r\n        activityCard.innerHTML = `\r\n            <img src=${element.poster}></img>\r\n            <h2><a href= \"#\">${element.title}</a></h2>\r\n            <p>${element.year}</p>\r\n        `;\r\n        container.appendChild(activityCard);\r\n\r\n    });\r\n    \r\n}\r\n\r\nmodule.exports = renderCards;\n\n//# sourceURL=webpack://front/./scripts/rendercards.js?");
 
 /***/ }),
 
