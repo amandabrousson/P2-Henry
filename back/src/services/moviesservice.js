@@ -38,7 +38,27 @@ const movielist = [
     },
 ];
 
+class Movies{
+    constructor(id, title, poster, year){
+        if (!title || !poster || !year) {
+            throw new Error("Propiedades no válidas");
+        }
+        this.id = id;
+        this.title = title;
+        this.poster = poster; 
+        this.year = year;
+    }
+}
 
+const titanic = new Movies(4, "Titanic", "https://c8.alamy.com/compes/ejwp0h/poster-de-pelicula-titanic-1997-ejwp0h.jpg", 2000);
+movielist.push(titanic);
+
+/* createMovie(title, poster, year){ /* un metodo que le permita filtrar las actividades   
+            const id = this.getNextId();
+            const movie = new Movies(id, title, poster, year);
+            this.insertMovie(movie);
+            return movie;
+        }; */
 
 module.exports = {
 
@@ -66,19 +86,22 @@ module.exports = {
         const moviesByGenre = movielist.filter(element => element.genre.includes(genre));
         return moviesByGenre;
     },
-    getMovieByRate: async (rate) => {
-        const rateNumber = parseFloat(rate);
+    // moviesservice.js
 
-        const moviesWithRate = movielist.filter(element => element.rate >= rateNumber);
+    getMovieByRate: async (rate) => {
+        const rateNumber = rate;
+
+        const moviesWithRate = movielist.filter(element => Math.floor(element.rate) === Math.floor(rateNumber));
 
         return moviesWithRate;
     },
+
     getMovieByPoster: async (poster) => {
-        
-            // Filtra las películas que tienen un póster definido
-            const moviesWithPoster = movielist.filter(element => element.poster !== undefined && element.poster !== null);
-            return moviesWithPoster;
-        }
+
+        // Filtra las películas que tienen un póster definido
+        const moviesWithPoster = movielist.filter(element => element.poster !== undefined && element.poster !== null);
+        return moviesWithPoster;
+    }
         
     }
 

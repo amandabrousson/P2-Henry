@@ -102,9 +102,10 @@ h1{
     border-style: double;
 } 
 
-/* .estilocartas img:hover {
-    color: black;
-} */  
+ .estilocartas:hover {
+    transform: scale(1.15);
+    opacity: 1; 
+}
 
 .estilocartas img{
     display: flex;

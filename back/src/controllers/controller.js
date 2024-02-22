@@ -19,7 +19,13 @@ module.exports = {
         try {
             const title = req.query.title;
             const movieByTitle = await moviesservice.getMovieByTitle(title);
-            res.status(200).json(movieByTitle);
+            if (movieByTitle.length > 0) {
+                res.status(200).json(movieByTitle);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
+            }
 
         } catch (error) {
             res.status(500).json({
@@ -32,7 +38,13 @@ module.exports = {
         try {
             const year = req.query.year;
             const movieByYear = await moviesservice.getMovieByYear(year);
-            res.status(200).json(movieByYear);
+            if (movieByYear.length > 0) {
+                res.status(200).json(movieByYear);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
+            }
         } catch (error) {
             res.status(500).json({
                 error: "error interno del servidor"
@@ -44,7 +56,13 @@ module.exports = {
         try {
             const director = req.query.director;
             const movieByDirector = await moviesservice.getMovieByDirector(director);
-            res.status(200).json(movieByDirector);
+            if (movieByDirector.length > 0) {
+                res.status(200).json(movieByDirector);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
+            }
         } catch (error) {
             res.status(500).json({
                 error: "error interno del servidor"
@@ -74,12 +92,12 @@ module.exports = {
             const genre = req.query.genre;
             const moviesByGenre = await moviesservice.getMovieByGenre(genre);
 
-            if (moviesByGenre.length === 0) {
-                res.status(404).json({
-                    error: "No se encontraron películas para el género especificado."
-                });
-            } else {
+            if (moviesByGenre.length > 0) {
                 res.status(200).json(moviesByGenre);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
             }
         } catch (error) {
             res.status(500).json({
@@ -92,13 +110,12 @@ module.exports = {
         try {
             const rate = req.query.rate;
             const moviesByRate = await moviesservice.getMovieByRate(rate);
-
-            if (moviesByRate.length === 0) {
-                res.status(404).json({
-                    error: "No se encontraron películas para la puntuación especificada."
-                });
-            } else {
+            if (moviesByRate.length > 0) {
                 res.status(200).json(moviesByRate);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
             }
         } catch (error) {
             res.status(500).json({
