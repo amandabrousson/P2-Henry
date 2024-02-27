@@ -15,6 +15,24 @@ module.exports = {
         }
     },
 
+    getId: async (req, res) => {
+        try {
+            const id = req.params.movieId;
+            const movieById = await moviesservice.getOneMovie(id);
+            if (movieById.length > 0) {
+                res.status(200).json(movieById);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
+            }
+        } catch (error) {
+            res.status(500).json({
+                error: "error interno del servidor"
+            });
+        }
+    },
+
     getTitle: async (req, res) => {
         try {
             const title = req.query.title;
@@ -137,3 +155,4 @@ module.exports = {
 }
 
 
+/* Const getmoviesparamcontroller = (req, res) */

@@ -34,9 +34,10 @@ movielist.push(starwarsIV);
 const lordofrings1 = new Movies("The Lord of the Rings: The Fellowship of the Ring", 2001, "Peter Jackson", "2h 58min", ["Action", "Adventure", "Drama", "Fantasy"], 8.8, "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg");
 movielist.push(lordofrings1);
 
-const titanic = new Movies("Titanic", "James Cameron", 1988, "3h 30m", ["Drama", "Aventura", "Romántico"], 7.9, "https://c8.alamy.com/compes/ejwp0h/poster-de-pelicula-titanic-1997-ejwp0h.jpg");
+const titanic = new Movies("Titanic", 1988, "James Cameron", "3h 30m", ["Drama", "Aventura", "Romántico"], 7.9, "https://c8.alamy.com/compes/ejwp0h/poster-de-pelicula-titanic-1997-ejwp0h.jpg");
 movielist.push(titanic);
 
+/* console.log(movielist); */
 /* createMovie(title, poster, year){ /* un metodo que le permita filtrar las actividades   
             const id = this.getNextId();
             const movie = new Movies(id, title, poster, year);
@@ -50,8 +51,13 @@ module.exports = {
         return movielist;
     },
 
+    getOneMovie: async (id) =>{
+        const movieId = movielist.filter(element => element.id === Number(id));
+        return movieId;
+    },
     getMovieByTitle: async (title) => {
-        const moviesWithTitle = movielist.filter(element => element.title === title);
+        const lowerCaseTitle = title.toLowerCase();
+        const moviesWithTitle = movielist.filter(element => element.title.toLowerCase() === lowerCaseTitle);
         return moviesWithTitle;
     },
     getMovieByYear: async (year) => {
