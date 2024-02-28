@@ -21,7 +21,7 @@ body {
     justify-content: right;
     text-align: right;
     position: absolute;
-    margin-left: 79rem;
+    margin-left: 75rem;
 }
 
 .nav-link {
@@ -55,12 +55,10 @@ h1 {
 
 .buscador {
     background-color: rgb(67, 66, 66);
-    height: 3rem;
     display: flex;
     justify-content: center;
     list-style: none;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    height: 3.5rem;
 }
 
 .buscador a {
@@ -68,8 +66,8 @@ h1 {
     flex-direction: row;
     color: white;
     text-align: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-right: 6rem; 
+    margin-top: 1.2rem;
     text-decoration: none;
     font-size: 1.2rem;
 }
@@ -78,6 +76,7 @@ h1 {
     background-color: #ddd;
     color: black;
 }
+
 
 .menu-vertical {
     position: absolute;
@@ -94,6 +93,23 @@ h1 {
     display: block;
 }
 
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    list-style: none;
+    }
+
+.search button {
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    background: none;
+    color: aliceblue;
+    border: none;
+}
+
+
 
 
 
@@ -107,22 +123,22 @@ h1 {
     padding: 20px;
     border-radius: 7px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     margin-left: 7rem;
+    
 }
 
 .estilocartas {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    /* background-color:#f4efe686; */
     width: 17rem;
-    height: 31rem;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    border-style: double;
-}
+    height: 21rem;
+    padding-right: 20px;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-bottom: 7rem;
+    }
 
 .estilocartas:hover {
     transform: scale(1.15);
@@ -130,10 +146,13 @@ h1 {
 }
 
 .estilocartas img {
+    width: 100%;
+    height: 100%; /* Establece la altura al 100% del contenedor (.estilocartas) */
+    object-fit: cover;
     display: flex;
-    max-width: 100%;
-    align-self: center;
-    margin-top: 1rem;
+    flex-direction: row;
+    row-gap: 33%;
+    cursor: pointer;
 }
 
 .estilocartas h2 a {
@@ -144,42 +163,83 @@ h1 {
     padding: 0.5rem;
     color: white;
     text-decoration: none;
+    text-align: justify;
 }
-
 
 .estilocartas p {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     font-size: 0.7rem;
-    margin-top: 0rem;
+    margin-top: 0.5rem;
     color: white;
     margin-left: 0.5rem;
 }
 
-.cont-director {
-    display: none;
+.titulopeli {
+    margin-top: 1rem;
+    cursor: pointer;
+    color: white;
+    text-align: center;
 }
 
-.cont-duracion {
-    display: none;
+.estilocartita {
+    position: absolute;
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    width: 17rem;
+    height: 21rem;
+    border-radius: 0.4rem;
+    list-style: none;
+    }
+
+.estilocartita p{
+    color: white;
+    font-size: 0.8rem;
+    text-align: justify;
+    display: block;
 }
 
-.cont-genero {
-    display: none;
+.estilocartita .video-container {
+    width: 100%; 
+    height: 0; 
+    padding-bottom: 56.25%; 
+    position: relative; 
+    margin-top: 10px; 
+  }
+  
+  .estilocartita .video-container iframe {
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+  }
+
+.estilocartita button.cerrarBtn {
+    display: flex;
+    background-color: #007bff;
+    color: white;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 5.5rem;
+    margin-top: 1rem;
 }
 
-.cont-rate {
-    display: none;
-}
 
 hr {
     box-sizing: content-box;
-    height: 0.5rem;
+    border: 2px solid white;
     overflow: visible;
     width: 77rem;
     margin-left: 7rem;
-    color: white;
-}
+    }
 
 .contacto {
     text-align: center;
