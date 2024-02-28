@@ -92,6 +92,20 @@ hr {
     margin-left: 8rem;
 }
 
+.aclaracion{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    text-align: justify;
+    width: 65rem;
+    padding-top: 2rem;
+    margin-left: 8rem;
+    background-color: #333; /* Fondo gris oscuro */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    }
+
 .contacto {
     text-align: center;
     color: aliceblue;
