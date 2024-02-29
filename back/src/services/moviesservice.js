@@ -5,9 +5,11 @@
 const apiMovie= {
     apiUrl: "https://students-api.2.us-1.fl0.io/movies", */
 
+const Movie = require("../modelos/movie");
+
 let nextId = 1;
 
-class Movies {
+/* class Movies {
     constructor(title, year, director, duration, genre, rate, poster, trailer) {
         if (!title || !director || !year) {
             throw new Error("Propiedades no válidas");
@@ -22,9 +24,9 @@ class Movies {
         this.poster = poster;
         this.trailer = trailer;
     }
-}
+} */
 
-const movielist = [];
+/* const movielist = [];
 
 const GuardiansVol2 = new Movies("Guardians of the Galaxy Vol. 2", 2017, "James Gunn", "2h 16min", ["Action", "Adventure", "Comedy"], 7.7, "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg", '<iframe width="560" height="315" src="https://www.youtube.com/embed/wUn05hdkhjM?si=kDTurcy2nQfNlQrG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
 movielist.push(GuardiansVol2);
@@ -35,7 +37,7 @@ movielist.push(starwarsIV);
 const lordofrings1 = new Movies("The Lord of the Rings: The Fellowship of the Ring", 2001, "Peter Jackson", "2h 58min", ["Action", "Adventure", "Drama", "Fantasy"], 8.8, "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg", '<iframe width="560" height="315" src="https://www.youtube.com/embed/3GJp6p_mgPo?si=pNoCZdwgy5UkTr45" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
 movielist.push(lordofrings1);
 
-const titanic = new Movies("Titanic", 1988, "James Cameron", "3h 30m", ["Drama", "Adventure", "Romantic"], 7.9, "https://pics.filmaffinity.com/titanic-321994924-large.jpg", '<iframe width="560" height="315" src="https://www.youtube.com/embed/tA_qMdzvCvk?si=o6dR4702xSOZaMbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
+const titanic = new Movies("Titanic", 1988, "James Cameron", "3h 30m", ["Drama", "Adventure", "Romantic"], 7.9, "https://pics.filmaffinity.com/titanic-321994924-large.jpg", 'Harry');
 movielist.push(titanic);
 
 const harryPotter1 = new Movies("Harry Potter and the philosopher`s stone", 2001, "Chris Columbus", "2h 32min", ["Fantasy", "Adventure"], 7.6, "https://musicart.xboxlive.com/7/92e05000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080", '<iframe width="560" height="315" src="https://www.youtube.com/embed/uwM2oPGQMl4?si=bvotmroWSZyOk51u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
@@ -48,25 +50,16 @@ const efectoMariposa = new Movies("Butterfly Effect", 2004, "Eric Bress J.", "1h
 movielist.push(efectoMariposa);
 
 const interestelar = new Movies("Intrestellar", 2014, "Christopher Nolan", "2h 49min", ["Adventure", "Sci-Fi"], 8.7, "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg", '<iframe width="560" height="315" src="https://www.youtube.com/embed/zSWdZVtXT7E?si=7PZGslc99RKLDddu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
-movielist.push(interestelar);
-
-
-
-/* console.log(movielist); */
-/* createMovie(title, poster, year){ /* un metodo que le permita filtrar las actividades   
-            const id = this.getNextId();
-            const movie = new Movies(id, title, poster, year);
-            this.insertMovie(movie);
-            return movie;
-        }; */
+movielist.push(interestelar); */
 
 module.exports = {
 
     getAllMovies: async () => {
-        return movielist;
+        const movies= await Movie.find();
+        return movies;
     },
 
-    getOneMovie: async (id) =>{
+   getOneMovie: async (id) =>{
         const movieId = movielist.filter(element => element.id === Number(id));
         return movieId;
     },
@@ -86,7 +79,7 @@ module.exports = {
     /* getMovieByDuration: async(duration) =>{
         const movieWithDuration = movielist.filter(element => parseFloat(element.duration) > parseFloat(duration));
         return movieWithDuration;
-    } */
+    } */ 
     getMovieByGenre: async (genre) => {
         const moviesByGenre = movielist.filter(element => element.genre.includes(genre));
         return moviesByGenre;
@@ -106,7 +99,7 @@ module.exports = {
         // Filtra las películas que tienen un póster definido
         const moviesWithPoster = movielist.filter(element => element.poster !== undefined && element.poster !== null);
         return moviesWithPoster;
-    }
+    } 
 
 }
 
