@@ -68,45 +68,47 @@ module.exports = {
          const movie = await Movie.findOne({ title });
          return movie;
      },
-
-    createMovie: async (movie) =>{
-        const newMovie = await Movie.create(movie) // creo la pelicula que me pasan por parametro el cual es un objeto. 
-        return newMovie;
-    },
-
-    getMovieByYear: async (year) => {
-        const movieWithYear = movielist.filter(element => element.year === parseInt(year));
+     
+     getMovieByYear: async (year) => {
+        const movieWithYear = await Movie.findOne({ year: parseInt(year) });
         return movieWithYear;
     },
+    
     getMovieByDirector: async (director) => {
-        const movieWithDirector = movielist.filter(element => element.director === director);
+        const movieWithDirector = await Movie.findOne({ director });
         return movieWithDirector;
     },
-    /* getMovieByDuration: async(duration) =>{
-        const movieWithDuration = movielist.filter(element => parseFloat(element.duration) > parseFloat(duration));
-        return movieWithDuration;
-    } */ 
+    
+    getMovieByDuration: async(duration) =>{
+        const moviesWithDuration = await Movie.find({ duration: { $gt: duration } });
+            return moviesWithDuration;
+    },
+
     getMovieByGenre: async (genre) => {
-        const moviesByGenre = movielist.filter(element => element.genre.includes(genre));
+        const moviesByGenre = await Movie.findOne({ genre });
         return moviesByGenre;
     },
     // moviesservice.js
 
     getMovieByRate: async (rate) => {
         const rateNumber = rate;
-
-        const moviesWithRate = movielist.filter(element => Math.floor(element.rate) === Math.floor(rateNumber));
-
+        const moviesWithRate = await Movie.find({ rate: { $gte: rateNumber - 0.5, $lte: rateNumber + 0.5 } });
         return moviesWithRate;
     },
 
-    getMovieByPoster: async (poster) => {
-
-        // Filtra las películas que tienen un póster definido
-        const moviesWithPoster = movielist.filter(element => element.poster !== undefined && element.poster !== null);
+    getMovieByPoster: async () => {
+        const moviesWithPoster = await Movie.find({ poster: { $exists: true, $ne: null } });
         return moviesWithPoster;
-    } 
+    },
+    getMovieByTrailer: async (trailer) => {
+        const movieWithTrailer = await Movie.findOne({ trailer });
+        return movieWithTrailer;
+    },
 
+    createMovie: async (movie) =>{
+        const newMovie = await Movie.create(movie); // creo la pelicula que me pasan por parametro el cual es un objeto. 
+        return newMovie;
+    }
 }
 
 

@@ -102,7 +102,7 @@ label {
     text-align: center;
 }
 
-#input {
+.input {
     display: flex;
     align-items: center;
     padding: 3px;

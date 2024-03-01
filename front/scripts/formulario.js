@@ -1,52 +1,52 @@
 const botonAgregar = document.getElementById("agregar")
 const formulario = document.getElementById('formulario');
+
 /* const mirepositorio = new Repository();  */
 
-/* const handler = () => {
+const enviar = async () => {
     const titulo = document.getElementById('titulo').value;
-    const descripcion = document.getElementById('descripcion').value;
-    const url = document.getElementById('url').value
-    
-    if (!titulo || !descripcion || !url){
+    const year = document.getElementById('year').value;
+    const director = document.getElementById('director').value;
+    const duration = document.getElementById('duration').value;
+    const genre = document.getElementById('genre').value.split(',');
+    const rate = document.getElementById('rate').value;
+    const poster = document.getElementById('poster').value;
+    const trailer = document.getElementById('trailer').value;
+
+    if (!titulo || !year || !director || !duration || !genre || !rate || !poster || !trailer) {
         alert("Por favor, completa todos los campos.");
-    } else {      
-        const activity = mirepositorio.createActivity(titulo, descripcion, url);
-        
-        displayActivity(activity);
-        
-        document.getElementById('titulo').value = ''
-        document.getElementById('descripcion').value = ''
-        document.getElementById('url').value = ''
+        return;
     }
-}
 
-function displayActivity(activity) {
-    const activityCard = document.createElement('div');
-    activityCard.className = "cardElementStyle"
-    activityCard.innerHTML = `
-    
-    <strong></strong> ${activity.titulo}<br>
-      <strong></strong> ${activity.descripcion}<br>
-      <img src=${activity.url} alt='foto' />
-      <button onclick="deleteActivity(${activity.id})">Eliminar</button>
-      `;
-    
-      divgrande.appendChild(activityCard);
-      
-      console.log('Actividades:', mirepositorio.getallactivities());
-      
-    } */
-    
-    function refreshFormulario() {
-        formulario.reset();
-    };
-    
+    try {
+        const response = await axios.post("http://localhost:3000/movies", {
+            title: titulo,
+            year: parseInt(year), // Convertir año a número
+            director,
+            duration,
+            genre,
+            rate: parseFloat(rate), // Convertir tasa a número decimal
+            poster,
+            trailer,
+        });
 
-    /* function deleteActivity(id) {
-        mirepositorio.deleteActivity(id);
-        refreshActivityDisplay();
+        console.log(response.data); // Puedes mostrar la respuesta del servidor en la consola
+        refreshFormulario(); // Limpiar el formulario después de enviar la película
+    } catch (error) {
+        console.error("Error al enviar datos:", error);
+    }
+};
+
+function refreshFormulario() {
+    formulario.reset();
+};
+
+
+/* function deleteActivity(id) {
+    mirepositorio.deleteActivity(id);
+    refreshActivityDisplay();
 } */
 
 
-botonAgregar.addEventListener("click", handler)  // Evento del boton. 
+botonAgregar.addEventListener("click", enviar)  // Evento del boton. 
 

@@ -32,40 +32,40 @@ implementar funcion que seleccione inputs y verificar que los datos esten ingres
 
 <form class="formulario" id="formulario">
     <label for="titulo">Title:</label>
-    <input type="text" id="input" name="nombre" required>
+    <input class="input" type="text" id="titulo" name="nombre" required>
 
     <div class="formulario-fila">
         <div>
             <label for="year">Year:</label>
-            <input type="number" id="input" name="nombre" required>
+            <input class="input" type="number" id="year" name="nombre" required>
         </div>
         <div>
             <label for="director">Director:</label>
-            <input type="text" id="input" name="nombre" required>
+            <input class="input" type="text" id="director" name="nombre" required>
         </div>
     </div>
     <div class="formulario-fila">
         <div>
             <label for="duration">Duration:</label>
-            <input type="text" id="input" name="nombre" placeholder="Ej: 2 hs 38 min" required>
+            <input class="input" type="text" id="duration" name="nombre" placeholder="Ej: 2 hs 38 min" required>
         </div>
         <div>
             <label for="genre">Genre:</label>
-            <input type="text" id="input" name="nombre" required>
+            <input class="input" type="text" id="genre" name="nombre" required>
         </div>
     </div>
      <div class="formulario-fila">
         <div>
             <label for="rate">Rate:</label>
-            <input type="text" id="input" name="nombre" pattern="[0-9.,]+" placeholder="Ej: 9.8" required>
+            <input class="input" type="text" id="rate" name="nombre" pattern="[0-9.,]+" placeholder="Ej: 9.8" required>
         </div>
         <div>
             <label for="imagen">Poster:</label>
-                <input type="text" id="input" name="imagen" placeholder="URL de la imagen" required>
+                <input class="input" type="text" id="poster" name="imagen" placeholder="URL de la imagen" required>
         </div>
      </div>
     <label for="video">Trailer:</label>
-        <input type="text" id="input" name="input" placeholder="URL del trailer" required>
+        <input class="input" type="text" id="trailer" name="input" placeholder="URL del trailer" required>
 
     <div class="botones">
         <button type="Clean" onclick="refreshFormulario()">Limpiar campos</button>
@@ -82,6 +82,7 @@ implementar funcion que seleccione inputs y verificar que los datos esten ingres
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="../scripts/formulario.js"></script>
 </body>
 

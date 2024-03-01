@@ -53,18 +53,23 @@ module.exports = {
     },
 
     createMovies: async (req, res) =>{
+        try{
         const { title, year, director, duration, genre, rate, poster, trailer } = req.body;
         const newMovie = await moviesservice.createMovie({title, year, director, duration, genre, rate, poster, trailer});
         res.status(201).json(newMovie);
-    },
-
-
+    } catch (error) {
+        // Si hay algún error durante el proceso, maneja el error y envía una respuesta con un código de estado 500 (error interno del servidor)
+        console.error('Error al crear nueva película:', error);
+        res.status(500).json({
+            error: 'error interno del servidor'
+        });
+    }},
 
     getYear: async (req, res) => {
         try {
             const year = req.query.year;
             const movieByYear = await moviesservice.getMovieByYear(year);
-            if (movieByYear.length > 0) {
+            if (movieByYear) {
                 res.status(200).json(movieByYear);
             } else {
                 res.status(404).json({
@@ -82,7 +87,7 @@ module.exports = {
         try {
             const director = req.query.director;
             const movieByDirector = await moviesservice.getMovieByDirector(director);
-            if (movieByDirector.length > 0) {
+            if (movieByDirector) {
                 res.status(200).json(movieByDirector);
             } else {
                 res.status(404).json({
@@ -96,29 +101,32 @@ module.exports = {
         }
     },
 
-    /*  getDuration: async(req, res) =>{
-         try{
-         const duration = req.query.duration;
-         const movieByDuration = await moviesservice.getMovieByDuration(duration);
-         if (movieByDuration.length === 0) {
-             res.status(404).json({
-                 error: "No se encontraron películas para la duración especificada."
-             });
-         } else {
-             res.status(200).json();
-         }
-         } catch(error){
-             res.status(500).json({
-                 error: "error interno del servidor"
-             });
-         }
-     }, */
+    getDuration: async (req, res) => {
+        try {
+            const duration = req.query.duration;
+            const moviesByDuration = await moviesservice.getMovieByDuration(duration);
+    
+            if (moviesByDuration.length === 0) {
+                res.status(404).json({
+                    error: "No se encontraron películas para la duración especificada."
+                });
+            } else {
+                res.status(200).json(moviesByDuration);
+            }
+        } catch (error) {
+            res.status(500).json({
+                error: "Error interno del servidor"
+            });
+        }
+    },
+    
+
     getGenre: async (req, res) => {
         try {
             const genre = req.query.genre;
             const moviesByGenre = await moviesservice.getMovieByGenre(genre);
 
-            if (moviesByGenre.length > 0) {
+            if (moviesByGenre) {
                 res.status(200).json(moviesByGenre);
             } else {
                 res.status(404).json({
@@ -136,7 +144,7 @@ module.exports = {
         try {
             const rate = req.query.rate;
             const moviesByRate = await moviesservice.getMovieByRate(rate);
-            if (moviesByRate.length > 0) {
+            if (moviesByRate) {
                 res.status(200).json(moviesByRate);
             } else {
                 res.status(404).json({
@@ -159,8 +167,23 @@ module.exports = {
                 error: "Error interno del servidor"
             });
         }
+    },
+    getTrailer: async (req, res) => {
+        try {
+            const { trailer } = req.query;
+            const movieByTrailer = await moviesservice.getMovieByTrailer(trailer);
+            if (movieByTrailer) {
+                res.status(200).json(movieByTrailer);
+            } else {
+                res.status(404).json({
+                    message: "La búsqueda no arrojó resultados",
+                });
+            }
+        } catch (error) {
+            res.status(500).json({
+                error: "Error interno del servidor"
+            });
+        }
     }
 }
 
-
-/* Const getmoviesparamcontroller = (req, res) */
