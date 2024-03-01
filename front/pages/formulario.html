@@ -1,0 +1,88 @@
+<!-- Crear vista de formulario con inputs 
+implementar funcion que seleccione inputs y verificar que los datos esten ingresados-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinema home</title>
+ <link rel="stylesheet" type="text/css" href="../styles/formulario.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/reset.css"> -->
+</head>
+
+<body>
+  <header>
+
+    <div class="fondohead">
+
+      <nav class="menu">
+        <a class="nav-link active" href="../index.html">Inicio</a>
+      </nav>
+      <img src="../styles/img/back.webp" class="img-fluid" alt="Responsive image">
+      <h1 class="titulogeneral">HOME M O V I E S</h1>
+    </div>
+
+  </header>
+
+  <main>
+    <div class="cuerpo">
+      <h2 class="tituloweb">Agregar película</h2>
+      <hr>
+
+<form class="formulario" id="formulario">
+    <label for="titulo">Title:</label>
+    <input type="text" id="input" name="nombre" required>
+
+    <div class="formulario-fila">
+        <div>
+            <label for="year">Year:</label>
+            <input type="number" id="input" name="nombre" required>
+        </div>
+        <div>
+            <label for="director">Director:</label>
+            <input type="text" id="input" name="nombre" required>
+        </div>
+    </div>
+    <div class="formulario-fila">
+        <div>
+            <label for="duration">Duration:</label>
+            <input type="text" id="input" name="nombre" placeholder="Ej: 2 hs 38 min" required>
+        </div>
+        <div>
+            <label for="genre">Genre:</label>
+            <input type="text" id="input" name="nombre" required>
+        </div>
+    </div>
+     <div class="formulario-fila">
+        <div>
+            <label for="rate">Rate:</label>
+            <input type="text" id="input" name="nombre" pattern="[0-9.,]+" placeholder="Ej: 9.8" required>
+        </div>
+        <div>
+            <label for="imagen">Poster:</label>
+                <input type="text" id="input" name="imagen" placeholder="URL de la imagen" required>
+        </div>
+     </div>
+    <label for="video">Trailer:</label>
+        <input type="text" id="input" name="input" placeholder="URL del trailer" required>
+
+    <div class="botones">
+        <button type="Clean" onclick="refreshFormulario()">Limpiar campos</button>
+        <button id="agregar" type="button"> AGREGAR </button>
+    </div>
+</form>
+
+<footer>
+    <hr>
+    <h3 class="contacto">Contacto</h3>
+    <div class="estaticas">
+      <a href="./sobrelaweb.html">Sobre la web</a>
+      <a href="./otraswebs.html">Otras webs</a>
+    </div>
+  </footer>
+
+  <script src="../scripts/formulario.js"></script>
+</body>
+
+</html>

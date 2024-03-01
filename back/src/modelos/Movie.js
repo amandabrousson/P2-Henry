@@ -7,10 +7,10 @@ const movieSchema = new mongoose.Schema({
     year: Number,
     director: String,
     duration: String,
-    genre: String,
+    genre: [String],
     rate: Number,
     poster: String,
-    trailer: String,
+    trailer: String
 });
 
 const Movie = mongoose.model("Movie", movieSchema);

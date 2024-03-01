@@ -18,7 +18,7 @@ function renderCards(data) {
 }
 
 function openCard(data, activityCard) {
-    const genresString = data.genre.join(', ');
+    const genresString = (data.genre).join(', ');
     const cuerpocartita = document.createElement("div");
     cuerpocartita.classList.add("estilocartita");
     cuerpocartita.innerHTML = `

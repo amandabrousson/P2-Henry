@@ -17,10 +17,10 @@ module.exports = {
 
     getId: async (req, res) => {
         try {
-            const id = req.params.movieId;
-            const movieById = await moviesservice.getOneMovie(id);
-            if (movieById.length > 0) {
-                res.status(200).json(movieById);
+            const { id } = req.params;
+            const movie = await moviesservice.getOneMovie(id);
+            if (movie) {
+                res.status(200).json(movie);
             } else {
                 res.status(404).json({
                     message: "La búsqueda no arrojó resultados",
@@ -35,10 +35,10 @@ module.exports = {
 
     getTitle: async (req, res) => {
         try {
-            const title = req.query.title;
-            const movieByTitle = await moviesservice.getMovieByTitle(title);
-            if (movieByTitle.length > 0) {
-                res.status(200).json(movieByTitle);
+            const { title } = req.body;
+            const movie = await moviesservice.getMovieByTitle(title);
+            if (movie) {
+                res.status(200).json(movie);
             } else {
                 res.status(404).json({
                     message: "La búsqueda no arrojó resultados",
@@ -51,6 +51,14 @@ module.exports = {
             });
         }
     },
+
+    createMovies: async (req, res) =>{
+        const { title, year, director, duration, genre, rate, poster, trailer } = req.body;
+        const newMovie = await moviesservice.createMovie({title, year, director, duration, genre, rate, poster, trailer});
+        res.status(201).json(newMovie);
+    },
+
+
 
     getYear: async (req, res) => {
         try {

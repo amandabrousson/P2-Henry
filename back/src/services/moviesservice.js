@@ -59,15 +59,21 @@ module.exports = {
         return movies;
     },
 
-   getOneMovie: async (id) =>{
-        const movieId = movielist.filter(element => element.id === Number(id));
-        return movieId;
+    getOneMovie: async (id) =>{
+         const movie =  await Movie.findById(id);
+         return movie;
+     },
+
+     getMovieByTitle: async (title) => {
+         const movie = await Movie.findOne({ title });
+         return movie;
+     },
+
+    createMovie: async (movie) =>{
+        const newMovie = await Movie.create(movie) // creo la pelicula que me pasan por parametro el cual es un objeto. 
+        return newMovie;
     },
-    getMovieByTitle: async (title) => {
-        const lowerCaseTitle = title.toLowerCase();
-        const moviesWithTitle = movielist.filter(element => element.title.toLowerCase() === lowerCaseTitle);
-        return moviesWithTitle;
-    },
+
     getMovieByYear: async (year) => {
         const movieWithYear = movielist.filter(element => element.year === parseInt(year));
         return movieWithYear;

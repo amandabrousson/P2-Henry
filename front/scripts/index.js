@@ -8,11 +8,16 @@ $.get(`https://students-api.2.us-1.fl0.io/movies/`, (data, status) => {
 });
 */
 
-const fetchMovies = async () =>{ //defino funcion asíncrona
-        const data = await axios.get("http://localhost:3000/movies"); // los datos se guardan en data.
-        renderCards(data.data); // Llamo a la función 'renderCards' con los datos obtenidos de la API.
-    
+const fetchMovies = async () => {
+    try {
+        const response = await axios.get("http://localhost:3000/movies");
+        console.log(response.data);
+        renderCards(response.data);
+    } catch (error) {
+        console.error("Error al obtener datos:", error);
+    }
 };
+
 
 fetchMovies();
 

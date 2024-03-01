@@ -1,0 +1,157 @@
+html {
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: black;
+    background-repeat: no-repeat;
+}
+
+
+.fondohead {
+    opacity: 80%;
+    position: relative;
+}
+
+
+.menu {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    text-align: right;
+    position: absolute;
+    margin-left: 75rem;
+}
+
+.nav-link {
+    color: aliceblue;
+    margin-right: 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+.img-fluid {
+    object-fit: cover;
+    width: 100%;
+    height: 32rem;
+
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #0de0b957;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    text-shadow: 0 0 7px cyan, 0 0 10px cyan, 0 0 42px cyan, 0 0 77px cyan, 0 0 100px cyan;
+}
+
+#cuerpo {
+    /* background-image: radial-gradient(circle, #444444, #3e3d3d, #2c2b2b, #1b1a1b, #050505); */
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    height: auto;
+    padding: 20px;
+    border-radius: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 7rem;
+}
+
+.tituloweb {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem 2rem 0 2rem;
+}
+
+hr {
+    box-sizing: content-box;
+    border: 1px solid rgba(255, 255, 255, 0.549);
+    overflow: visible;
+    width: 77rem;
+    margin-left: 7rem;
+    margin-top: 2rem;
+}
+
+.formulario {
+    width: 51rem;
+    height: 35rem;
+    margin: 20px auto;
+    gap: 8px;
+    background-image: url("./img/top-view-popcorn-with-copy-space_23-2148470161.jpg");
+    background-repeat: no-repeat;
+    background-size: 93%;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position-x: 2rem;
+    background-position-y: 0rem;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+#input {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+    width: 18rem;
+}
+
+.formulario-fila {
+    display: flex;
+    gap: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+button {
+    margin-right: 1rem;
+    margin-top: 3rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contacto {
+    text-align: center;
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.estaticas {
+    padding-top: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estaticas a {
+    display: flex;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: aliceblue;
+}
