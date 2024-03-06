@@ -26,6 +26,18 @@ implementar funcion que seleccione inputs y verificar que los datos esten ingres
   </header>
 
   <main>
+    <nav class="buscador">
+      <li><a href="../index.html">Inicio</a></li>
+      <li class="search">
+        <form action="/buscar" method="get">
+          <button type="submit">Search</button>
+          <input type="text" placeholder="Buscar..." name="q" />
+        </form>
+      </li>
+      
+    </nav> 
+
+  <main>
     <div class="cuerpo">
       <h2 class="tituloweb">Agregar película</h2>
       <hr>
@@ -46,12 +58,48 @@ implementar funcion que seleccione inputs y verificar que los datos esten ingres
     </div>
     <div class="formulario-fila">
         <div>
-            <label for="duration">Duration:</label>
-            <input class="input" type="text" id="duration" name="nombre" placeholder="Ej: 2 hs 38 min" required>
+            <label class="tituloduration" for="duration">Duration:</label>
+            <input class="input duration" type="text" id="duration" name="nombre" placeholder="Ej: 2 hs 38 min" required>
         </div>
-        <div>
-            <label for="genre">Genre:</label>
-            <input class="input" type="text" id="genre" name="nombre" required>
+        <div>   
+
+              <label>Genres:</label>
+              <div class="checkbox">
+                <input type="checkbox" id="action" name="nombrec" value="Action">
+                <label for="Action">Action</label>
+              
+                <input type="checkbox" id="adventure" name="nombrec" value="Adventure">
+                <label for="Adventure">Adventure</label>
+              
+                <input type="checkbox" id="comedy" name="nombrec" value="Comedy">
+                <label for="Comedy">Comedy</label>
+              
+                <input type="checkbox" id="drama" name="nombrec" value="Drama">
+                <label for="Drama">Drama</label>
+              
+                <input type="checkbox" id="fantasy" name="nombrec" value="Fantasy">
+                <label for="Fantasy">Fantasy</label>
+              
+                <input type="checkbox" id="mistery" name="nombrec" value="Mistery">
+                <label for="Mistery">Mistery</label>
+              
+                <input type="checkbox" id="romantic" name="nombrec" value="Romantic">
+                <label for="Romantic">Romantic</label>
+              
+                <input type="checkbox" id="scifi" name="nombrec" value="Scifi">
+                <label for="Scifi">Sci-Fi</label>
+              
+                <input type="checkbox" id="suspense" name="nombrec" value="Suspense">
+                <label for="Suspense">Suspense</label>
+              
+                <input type="checkbox" id="thriller" name="nombrec" value="Thriller">
+                <label for="Thriller">Thriller</label>
+
+                <input type="checkbox" id="other" name="nombrec" value="Other">
+                <label for="Other">Other</label>
+              </div>
+              
+          </select>
         </div>
     </div>
      <div class="formulario-fila">
