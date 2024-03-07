@@ -5,7 +5,7 @@ const catchAsync = require("../utils/utils");
 const getMovies = async (req, res) => {
     const movies = await moviesservice.getAllMovies();
     res.status(200).json(movies);
-
+    
 };
 
 const getId = async (req, res) => {
