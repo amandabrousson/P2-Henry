@@ -10,32 +10,32 @@ const Movie = require("../modelos/movie");
 module.exports = {
 
     getAllMovies: async () => {
-        const movies= await Movie.find();
+        const movies = await Movie.find();
         return movies;
     },
 
-    getOneMovie: async (id) =>{
-         const movie =  await Movie.findById(id);
-         return movie;
-     },
+    getOneMovie: async (id) => {
+        const movie = await Movie.findById(id);
+        return movie;
+    },
 
-     getMovieByTitle: async (title) => {
-         const movie = await Movie.findOne({ title });
-         return movie;
-     },
-     
-     getMovieByYear: async (year) => {
+    getMovieByTitle: async (title) => {
+        const movie = await Movie.findOne({ title });
+        return movie;
+    },
+
+    getMovieByYear: async (year) => {
         const movieWithYear = await Movie.findOne({ year: parseInt(year) });
         return movieWithYear;
     },
-    
+
     getMovieByDirector: async (director) => {
         const movieWithDirector = await Movie.findOne({ director });
         return movieWithDirector;
     },
-    
-    getMovieByDuration: async(duration) =>{
-        const movieByDuration = await Movie.findOne({ duration });
+
+    getMovieByDuration: async (duration) => {
+        const movieByDuration = await Movie.findOne({ duration: duration });
         return movieByDuration;
     },
 
@@ -60,7 +60,7 @@ module.exports = {
         return movieWithTrailer;
     },
 
-    createMovie: async (movie) =>{
+    createMovie: async (movie) => {
         const newMovie = await Movie.create(movie); // creo la pelicula que me pasan por parametro el cual es un objeto. 
         return newMovie;
     }
