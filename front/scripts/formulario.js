@@ -18,6 +18,10 @@ const enviar = async () => {
         alert("Por favor, completa todos los campos.");
         return;
     }
+    if (isNaN(year) || year.toString().length < 4 || year.toString().length > 4) {
+        alert("El campo 'year' debe ser un número de 4 dígitos." );
+        return;
+    };
 
     try {
         const response = await axios.post("http://localhost:3000/movies", {
@@ -52,4 +56,3 @@ function refreshFormulario() {
 
 
 botonAgregar.addEventListener("click", enviar)  // Evento del boton. 
-

@@ -145,5 +145,3 @@ module.exports = {
     getPoster: catchAsync(getPoster),
     getTrailer: catchAsync(getTrailer)
 };
-
-
