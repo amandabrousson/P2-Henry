@@ -7,7 +7,7 @@ implementar funcion que seleccione inputs y verificar que los datos esten ingres
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cinema home</title>
- <link rel="stylesheet" type="text/css" href="../styles/formulario.css">
+  <link rel="stylesheet" type="text/css" href="../styles/formulario.css">
   <!-- <link rel="stylesheet" type="text/css" href="styles/reset.css"> -->
 </head>
 
@@ -34,105 +34,107 @@ implementar funcion que seleccione inputs y verificar que los datos esten ingres
           <input type="text" placeholder="Buscar..." name="q" />
         </form>
       </li>
-      
-    </nav> 
 
-  <main>
-    <div class="cuerpo">
-      <h2 class="tituloweb">Agregar película</h2>
-      <hr>
+    </nav>
 
-<form class="formulario" id="formulario">
-    <label for="titulo">Title:</label>
-    <input class="input" type="text" id="titulo" name="nombre" required>
+    <main>
+      <div class="cuerpo">
+        <h2 class="tituloweb">Agregar película</h2>
+        <hr>
 
-    <div class="formulario-fila">
-        <div>
-            <label for="year">Year:</label>
-            <input class="input" type="number" id="year" name="nombre" required>
-        </div>
-        <div>
-            <label for="director">Director:</label>
-            <input class="input" type="text" id="director" name="nombre" required>
-        </div>
-    </div>
-    <div class="formulario-fila">
-        <div>
-            <label class="tituloduration" for="duration">Duration:</label>
-            <input class="input duration" type="text" id="duration" name="nombre" placeholder="Ej: 2hs 38min" required>
-        </div>
-        <div>   
+        <form class="formulario" id="formulario">
+          <label for="titulo">Title:</label>
+          <input class="input" type="text" id="titulo" name="nombre" required>
+
+          <div class="formulario-fila">
+            <div>
+              <label for="year">Year:</label>
+              <input class="input" type="number" id="year" name="nombre" required>
+            </div>
+            <div>
+              <label for="director">Director:</label>
+              <input class="input" type="text" id="director" name="nombre" required>
+            </div>
+          </div>
+          <div class="formulario-fila">
+            <div>
+              <label class="tituloduration" for="duration">Duration:</label>
+              <input class="input duration" type="text" id="duration" name="nombre" placeholder="Ej: 2hs 38min"
+                required>
+            </div>
+            <div>
 
               <label>Genres:</label>
               <div class="checkbox">
                 <input type="checkbox" id="action" name="nombrec" value="Action">
                 <label for="Action">Action</label>
-              
+
                 <input type="checkbox" id="adventure" name="nombrec" value="Adventure">
                 <label for="Adventure">Adventure</label>
-              
+
                 <input type="checkbox" id="comedy" name="nombrec" value="Comedy">
                 <label for="Comedy">Comedy</label>
-              
+
                 <input type="checkbox" id="drama" name="nombrec" value="Drama">
                 <label for="Drama">Drama</label>
-              
+
                 <input type="checkbox" id="fantasy" name="nombrec" value="Fantasy">
                 <label for="Fantasy">Fantasy</label>
-              
+
                 <input type="checkbox" id="mistery" name="nombrec" value="Mistery">
                 <label for="Mistery">Mistery</label>
-              
+
                 <input type="checkbox" id="romantic" name="nombrec" value="Romantic">
                 <label for="Romantic">Romantic</label>
-              
+
                 <input type="checkbox" id="scifi" name="nombrec" value="Scifi">
                 <label for="Scifi">Sci-Fi</label>
-              
+
                 <input type="checkbox" id="suspense" name="nombrec" value="Suspense">
                 <label for="Suspense">Suspense</label>
-              
+
                 <input type="checkbox" id="thriller" name="nombrec" value="Thriller">
                 <label for="Thriller">Thriller</label>
 
                 <input type="checkbox" id="other" name="nombrec" value="Other">
                 <label for="Other">Other</label>
               </div>
+
+              </select>
+            </div>
+          </div>
+          <div class="formulario-fila">
+            <div>
+              <label for="rate">Rate:</label>
+              <input class="input" type="text" id="rate" name="nombre" pattern="[0-9.,]+" placeholder="Ej: 9.8"
+                required>
+            </div>
+            <div>
+              <label for="imagen">Poster:</label>
+              <input class="input" type="text" id="poster" name="imagen" placeholder="URL de la imagen" required>
+            </div>
+          </div>
+          <label for="video">Trailer:</label>
+          <input class="input" type="text" id="trailer" name="input" placeholder="URL del trailer" required>
+
+          <div class="botones">
+            <button type="Clean" onclick="refreshFormulario()">Limpiar campos</button>
+            <button id="agregar" type="button"> AGREGAR </button>
+          </div>
+        </form>
+
+        <footer>
+          <hr>
+          <h3 class="contacto">Información</h3>
+          <div class="estaticas">
+            <a href="./sobrelaweb.html">Sobre la web</a>
+            <a href="./otraswebs.html">Otras webs</a>
+          </div>
+        </footer>
               
-          </select>
-        </div>
-    </div>
-     <div class="formulario-fila">
-        <div>
-            <label for="rate">Rate:</label>
-            <input class="input" type="text" id="rate" name="nombre" pattern="[0-9.,]+" placeholder="Ej: 9.8" required>
-        </div>
-        <div>
-            <label for="imagen">Poster:</label>
-                <input class="input" type="text" id="poster" name="imagen" placeholder="URL de la imagen" required>
-        </div>
-     </div>
-    <label for="video">Trailer:</label>
-        <input class="input" type="text" id="trailer" name="input" placeholder="URL del trailer" required>
+        <script type="module" src="../public/formulario.bundle.js" defer></script>
 
-    <div class="botones">
-        <button type="Clean" onclick="refreshFormulario()">Limpiar campos</button>
-        <button id="agregar" type="button"> AGREGAR </button>
-    </div>
-</form>
 
-<footer>
-    <hr>
-    <h3 class="contacto">Información</h3>
-    <div class="estaticas">
-      <a href="./sobrelaweb.html">Sobre la web</a>
-      <a href="./otraswebs.html">Otras webs</a>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script type="module" src="../scripts/formulario/formulario.js"></script>
-  
 </body>
 
 </html>

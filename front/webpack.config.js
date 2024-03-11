@@ -1,8 +1,15 @@
+const path = require('path');
+
 module.exports = {
-    mode: 'development',
-    entry: "./scripts/index.js", 
-    output: {
-        path: __dirname + "/public",
-        filename: "bundle.js",
-    },
+  mode: 'development',
+  entry: {
+    index: './scripts/index.js',
+    formulario: './scripts/formulario/formulario.js',
+  },
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].bundle.js',
+  },
+  
 };
+    

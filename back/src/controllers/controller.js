@@ -127,8 +127,13 @@ const getTrailer = async (req, res) => {
             message: "La búsqueda no arrojó resultados",
         });
     }
-
 };
+
+const addGenre= async (req, res) =>{
+    const { movieId, genreId } = req.body;
+    moviesservice.addGenre({movieId, genreId})
+    res.status(200).json({message: "todo ok"});
+}
 
 
 
@@ -143,5 +148,6 @@ module.exports = {
     getGenre: catchAsync(getGenre),
     getRate: catchAsync(getRate),
     getPoster: catchAsync(getPoster),
-    getTrailer: catchAsync(getTrailer)
+    getTrailer: catchAsync(getTrailer),
+    addGenre: catchAsync(addGenre)
 };
