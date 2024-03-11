@@ -54,7 +54,7 @@ h1 {
 
 
 .buscador {
-    background-color: rgb(67, 66, 66);
+    background-color: rgb(23, 23, 23);
     display: flex;
     justify-content: space-evenly;
     list-style: none;
@@ -212,7 +212,7 @@ hr {
     border: 2px solid white;
     overflow: visible;
     width: 77rem;
-    margin-left: 7rem;
+    margin-left: 9rem;
     }
 
 .contacto {
