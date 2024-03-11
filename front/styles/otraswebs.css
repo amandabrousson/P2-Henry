@@ -21,7 +21,7 @@ body {
     justify-content: right;
     text-align: right;
     position: absolute;
-    margin-left: 75rem;
+    margin-left: 80rem;
 }
 
 .nav-link {
@@ -47,6 +47,43 @@ h1 {
     left: 1rem;
     top: 1rem;
     text-shadow: 0 0 7px cyan, 0 0 10px cyan, 0 0 42px cyan, 0 0 77px cyan, 0 0 100px cyan;
+}
+
+
+.buscador {
+    background-color: rgb(67, 66, 66);
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    height: 3.5rem;
+}
+
+.buscador a {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: center;
+    padding-right: 6rem;
+    margin-top: 1.2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    width: 12rem;
+    display: block;
+    align-self: center;
+}
+
+.buscador li{
+    width: 11rem;
+    text-align: center;
+}
+
+.buscador li:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.buscador a:hover {
+    color: black;
 }
 
 #cuerpo {
@@ -83,7 +120,7 @@ hr {
     margin-right: 5rem;
 }
 
-.parrafowebtitulo{
+.parrafowebtitulo {
     font-size: 1.7rem;
     color: white;
     text-align: justify;
@@ -92,14 +129,14 @@ hr {
     margin-left: 5rem;
 }
 
-.parrafoweb{
+.parrafoweb {
     font-size: 1.3rem;
     color: white;
     text-align: justify;
     width: 65rem;
     padding-top: 2rem;
     margin-left: 8rem;
-    }
+}
 
 .contacto {
     text-align: center;
@@ -109,16 +146,7 @@ hr {
     margin-top: 2rem;
 }
 
-.estaticas {
-    padding-top: 1rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.estaticas a {
-    display: flex;
+.mail {
     text-align: center;
     margin-bottom: 2rem;
     color: aliceblue;

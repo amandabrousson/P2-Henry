@@ -21,7 +21,7 @@ body {
     justify-content: right;
     text-align: right;
     position: absolute;
-    margin-left: 75rem;
+    margin-left: 80rem;
 }
 
 .nav-link {
@@ -49,6 +49,42 @@ h1 {
     text-shadow: 0 0 7px cyan, 0 0 10px cyan, 0 0 42px cyan, 0 0 77px cyan, 0 0 100px cyan;
 }
 
+.buscador {
+    background-color: rgb(67, 66, 66);
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    height: 3.5rem;
+}
+
+.buscador a {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    text-align: center;
+    padding-right: 6rem; 
+    margin-top: 1.2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    width: 12rem;
+    display: block;
+    align-self: center;
+}
+
+.buscador li{
+    width: 11rem;
+    text-align: center;
+}
+
+.buscador li:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.buscador a:hover {
+    color: black;
+}
+
 #cuerpo {
     /* background-image: radial-gradient(circle, #444444, #3e3d3d, #2c2b2b, #1b1a1b, #050505); */
     background-color: black;
@@ -74,7 +110,7 @@ hr {
     border: 1px solid rgba(255, 255, 255, 0.549);
     overflow: visible;
     width: 77rem;
-    margin-left: 7rem;
+    margin-left: 8rem;
     margin-top: 2rem;
 }
 
@@ -87,9 +123,9 @@ hr {
     font-size: 1.5rem;
     color: white;
     text-align: justify;
-    width: 65rem;
+    width: 66rem;
     padding-top: 2rem;
-    margin-left: 8rem;
+    margin-left: 9rem;
 }
 
 .aclaracion{
@@ -114,16 +150,7 @@ hr {
     margin-top: 2rem;
 }
 
-.estaticas {
-    padding-top: 1rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.estaticas a {
-    display: flex;
+.mail {
     text-align: center;
     margin-bottom: 2rem;
     color: aliceblue;
