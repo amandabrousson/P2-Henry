@@ -5,7 +5,7 @@
 const apiMovie= {
     apiUrl: "https://students-api.2.us-1.fl0.io/movies", */
 
-    const Movie = require("../modelos/movie");
+    const Movie = require("../modelos/Movie");
 
     module.exports = {
     
@@ -47,12 +47,12 @@ const apiMovie= {
     
         getMovieByRate: async (rate) => {
             const rateNumber = rate;
-            const moviesWithRate = await Movie.find({ rate: { $gte: rateNumber - 0.5, $lte: rateNumber + 0.5 } });
+            const moviesWithRate = await Movie.find({ rate: rate});
             return moviesWithRate;
         },
     
         getMovieByPoster: async () => {
-            const moviesWithPoster = await Movie.find({ poster: { $exists: true, $ne: null } });
+            const moviesWithPoster = await Movie.find({ poster: { $exists: true } });;
             return moviesWithPoster;
         },
         getMovieByTrailer: async (trailer) => {
@@ -61,7 +61,7 @@ const apiMovie= {
         },
     
         createMovie: async (movie) => {
-            const newMovie = await Movie.create(movie); // creo la pelicula que me pasan por parametro el cual es un objeto. 
+            const newMovie = await Movie.create(movie); 
             return newMovie;
         }
     }
