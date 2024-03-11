@@ -1,8 +1,3 @@
-const botonAgregar = document.getElementById("agregar")
-const formulario = document.getElementById('formulario');
-
-/* const mirepositorio = new Repository();  */
-
 const enviar = async () => {
     const titulo = document.getElementById('titulo').value;
     const year = document.getElementById('year').value;
@@ -48,11 +43,4 @@ function refreshFormulario() {
     formulario.reset();
 };
 
-
-/* function deleteActivity(id) {
-    mirepositorio.deleteActivity(id);
-    refreshActivityDisplay();
-} */
-
-
-botonAgregar.addEventListener("click", enviar)  // Evento del boton. 
+export { enviar };
