@@ -32,12 +32,6 @@ const getTitle = async (req, res) => {
     }
 };
 
-const createMovies = async (req, res) => {
-
-    const { title, year, director, duration, genre, rate, poster, trailer } = req.body;
-    const newMovie = await moviesservice.createMovie({ title, year, director, duration, genre, rate, poster, trailer });
-    res.status(201).json(newMovie);
-};
 
 const getYear = async (req, res) => {
 
@@ -64,7 +58,7 @@ const getDirector = async (req, res) => {
             message: "La búsqueda no arrojó resultados",
         });
     }
-
+    
 };
 
 const getDuration = async (req, res) => {
@@ -96,7 +90,7 @@ const getGenre = async (req, res) => {
 };
 
 const getRate = async (req, res) => {
-
+    
     const rate = req.query.rate;
     const moviesByRate = await moviesservice.getMovieByRate(rate);
     if (moviesByRate) {
@@ -106,7 +100,7 @@ const getRate = async (req, res) => {
             message: "La búsqueda no arrojó resultados",
         });
     }
-
+    
 };
 
 const getPoster = async (req, res) => {
@@ -117,31 +111,28 @@ const getPoster = async (req, res) => {
 };
 
 const getTrailer = async (req, res) => {
+    const moviesWithTrailer = await moviesservice.getMovieByTrailer();
 
-    const { trailer } = req.query;
-    const movieByTrailer = await moviesservice.getMovieByTrailer(trailer);
-    if (movieByTrailer) {
-        res.status(200).json(movieByTrailer);
+    if (moviesWithTrailer.length > 0) {
+        res.status(200).json(moviesWithTrailer);
     } else {
         res.status(404).json({
-            message: "La búsqueda no arrojó resultados",
+            message: "No se encontraron películas con tráiler.",
         });
     }
 };
 
-const addGenre= async (req, res) =>{
-    const { movieId, genreId } = req.body;
-    moviesservice.addGenre({movieId, genreId})
-    res.status(200).json({message: "todo ok"});
-}
+const createMovies = async (req, res) => {
 
-
+    const { title, year, director, duration, genre, rate, poster, trailer } = req.body;
+    const newMovie = await moviesservice.createMovie({ title, year, director, duration, genre, rate, poster, trailer });
+    res.status(201).json(newMovie);
+};
 
 module.exports = {
     getMovies: catchAsync(getMovies),
     getId: catchAsync(getId),
     getTitle: catchAsync(getTitle),
-    createMovies: catchAsync(createMovies),
     getYear: catchAsync(getYear),
     getDirector: catchAsync(getDirector),
     getDuration: catchAsync(getDuration),
@@ -149,5 +140,5 @@ module.exports = {
     getRate: catchAsync(getRate),
     getPoster: catchAsync(getPoster),
     getTrailer: catchAsync(getTrailer),
-    addGenre: catchAsync(addGenre)
+    createMovies: catchAsync(createMovies),
 };

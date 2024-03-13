@@ -43,7 +43,6 @@ const apiMovie= {
             const moviesByGenre = await Movie.findOne({ genre });
             return moviesByGenre;
         },
-        // moviesservice.js
     
         getMovieByRate: async (rate) => {
             const rateNumber = rate;
@@ -55,10 +54,11 @@ const apiMovie= {
             const moviesWithPoster = await Movie.find({ poster: { $exists: true } });;
             return moviesWithPoster;
         },
-        getMovieByTrailer: async (trailer) => {
-            const movieWithTrailer = await Movie.findOne({ trailer });
-            return movieWithTrailer;
+        getMovieByTrailer: async () => {
+            const moviesWithTrailer = await Movie.find({ trailer: { $exists: true, $ne: '' } });
+            return moviesWithTrailer;
         },
+        
     
         createMovie: async (movie) => {
             const newMovie = await Movie.create(movie); 
