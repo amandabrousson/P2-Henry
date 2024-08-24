@@ -33,9 +33,9 @@ Se compone por:
 
   ![image](https://github.com/user-attachments/assets/7460c404-3c90-4198-8ced-3ecd4cf22176)
 
-- Sección “Mis Tecnologías Favoritas” que enumera mediante el formato deseado las tecnologías favoritas.
+- Sección “Sobre la web” provee información relativa a la aplicación
 
-![image](https://github.com/user-attachments/assets/bb1b8db9-d7f6-4193-8f16-39c56d11c653)
+![image](https://github.com/user-attachments/assets/d2001b56-cedb-4580-9c16-5b288e5466c7)
   
 - Sección “Mis Actividades Favoritas”, la cual contendrá:
     - Un serie de Inputs para que el usuario pueda ingresar TÍTULO, DESCRIPCIÓN y URL DE IMAGEN.
