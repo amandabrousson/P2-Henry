@@ -33,17 +33,22 @@ Se compone por:
 
   ![image](https://github.com/user-attachments/assets/7460c404-3c90-4198-8ced-3ecd4cf22176)
 
-- Sección “Sobre la web” provee información relativa a la aplicación
+- Sección “Sobre la web”, la cual provee información relativa a la aplicación
 
 ![image](https://github.com/user-attachments/assets/d2001b56-cedb-4580-9c16-5b288e5466c7)
   
-- Sección “Mis Actividades Favoritas”, la cual contendrá:
-    - Un serie de Inputs para que el usuario pueda ingresar TÍTULO, DESCRIPCIÓN y URL DE IMAGEN.
+- Sección “Otras webs”, la cual detalla de qué medios saca la información de su página, así como tambien sugiere la consulta de otras webs vinculadas al mundo del cine:
+  
+   ![image](https://github.com/user-attachments/assets/f0f45d00-a8b5-4988-b844-1bd1063e3163)
 
-![image](https://github.com/user-attachments/assets/ec7f3462-86a9-4456-8d42-cbda0d033f53)
+- Finalmente, cuenta con la sección "Agregar películas", la cual permite al usuario agregar nuevas películas. Las mismas se guardan en una base de datos para lograr su persistencia en la página incluso después de   cerrarla.
 
-- Lograr la funcionalidad de la sección “Mis Actividades Favoritas” e implementar la funcionalidad de eliminar tarjetas del contenedor al hacer click sobre ellas.
+  Para poder agregar la película será indispensable que rellene todos los campos del formulario.
+  
+  ![image](https://github.com/user-attachments/assets/4f432e3f-c291-4e7f-8a1c-1b56847d1dbb)
+  
 
-  ![image](https://github.com/user-attachments/assets/dad91f79-b7be-42a8-8831-22d6c219fd83)
+  
+
 
 
