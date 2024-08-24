@@ -12,12 +12,12 @@ Página web con estructura fullstack. Se encuentra comprendida por un backend, c
 - Base de datos (MongoDB ATLAS, MongoDB COMPASS, mongoose). 
 
 🎯 Objetivos:
+- Diseñar una aplicación de películas, dentro de la cual se puedan consultar, agregar o eliminar películas.
 - Manejo de repositorios con Git y Github.
 - Manejo de protocolos de comunicación.
 - Manejo de bases de datos. 
 
 🚀 Desarrollo:
-- Diseñar una aplicación de películas, dentro de la cual se puedan consultar, agregar o eliminar películas.
 
 ⭐ HomeMovies ⭐
 
