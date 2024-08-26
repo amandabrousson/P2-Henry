@@ -8,7 +8,7 @@ Segundo proyecto del bootcamp de programación fullstack SoyHenry.
 
 Página web con estructura fullstack. Se encuentra comprendida por un backend, cuyo servidor se encuentra conectado a una base de datos y un frontend que consume la información provista por el servidor. 
 
-🛠️ Tecnologías utilizadas:
+## 🛠️ Tecnologías utilizadas:
 - Javascript
 - CSS
 - Express
@@ -17,7 +17,7 @@ Página web con estructura fullstack. Se encuentra comprendida por un backend, c
 - Ajax
 - Base de datos (MongoDB ATLAS, MongoDB COMPASS, mongoose). 
 
-🎯 Objetivos:
+## 🎯 Objetivos:
 - Diseñar una aplicación de películas, dentro de la cual se puedan consultar, agregar o eliminar películas.
 - Manejo de repositorios con Git y Github.
 - Manejo de protocolos de comunicación.
@@ -64,7 +64,7 @@ Variables a definir
    ```bash
    PORT=3001
 
-🚀 Desarrollo:
+## 🚀 Desarrollo:
 
 
 Se compone por:
