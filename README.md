@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/f9bc8521-1b2f-44c6-a8b9-adb223120310)
+
 🌟 Segundo proyecto del bootcamp de programación fullstack SoyHenry.
 
 Página web con estructura fullstack. Se encuentra comprendida por un backend, cuyo servidor se encuentra conectado a una base de datos y un frontend que consume la información provista por el servidor. 
@@ -15,7 +17,44 @@ Página web con estructura fullstack. Se encuentra comprendida por un backend, c
 - Diseñar una aplicación de películas, dentro de la cual se puedan consultar, agregar o eliminar películas.
 - Manejo de repositorios con Git y Github.
 - Manejo de protocolos de comunicación.
-- Manejo de bases de datos. 
+- Manejo de bases de datos.
+
+## Instalación
+
+Sigue estos pasos para clonar y ejecutar el proyecto:
+
+1. **Clonar el repositorio**:
+
+   ```bash
+   git clone https://github.com/amandabrousson/P2-Henry.git
+
+2. **Ejecutarlo en Visual Studio Code e instalar sus dependencias en el backend como frontend**:
+
+    ```bash
+    Npm install
+
+ 3. **Para ejecutar el proyecto y ver la página desde el frontend y backend**:
+
+    ```bash
+    Npm start
+
+4. Crear archivo .env. Dentro de este archivo, se encontrarán las variables de entorno necesarias para ejecutar la conexión con la base de datos y el puerto de escucha del servidor Express.
+
+Variables a definir
+
+Usuario y clave de Mongo Atlas para la base de datos.
+mongoUser=Nombre_de_Usuario_de_Mongo
+
+mongoKey=Clave_de_Conexion_a_Mongo
+
+Nombre del clouster donde se creo la base de datos y nombre de la base de datos.
+clousterName=NombreDelClousterDondeEstaAlojadaLaBd
+
+dbName=NombreDeLaBd
+
+Puerto que utiliza el servidor backend para levantarse:
+
+PORT=3001
 
 🚀 Desarrollo:
 
