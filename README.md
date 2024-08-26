@@ -2,6 +2,10 @@
 
 🌟 Segundo proyecto del bootcamp de programación fullstack SoyHenry.
 
+⭐ HomeMovies ⭐
+
+![image](https://github.com/user-attachments/assets/684ae0df-c16e-4c80-a222-f441d9e1f62b)
+
 Página web con estructura fullstack. Se encuentra comprendida por un backend, cuyo servidor se encuentra conectado a una base de datos y un frontend que consume la información provista por el servidor. 
 
 🛠️ Tecnologías utilizadas:
@@ -62,9 +66,6 @@ Variables a definir
 
 🚀 Desarrollo:
 
-⭐ HomeMovies ⭐
-
-![image](https://github.com/user-attachments/assets/684ae0df-c16e-4c80-a222-f441d9e1f62b)
 
 Se compone por:
 
