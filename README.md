@@ -41,20 +41,24 @@ Sigue estos pasos para clonar y ejecutar el proyecto:
 4. Crear archivo .env. Dentro de este archivo, se encontrarán las variables de entorno necesarias para ejecutar la conexión con la base de datos y el puerto de escucha del servidor Express.
 
 Variables a definir
+- Usuario y clave de Mongo Atlas para la base de datos.
 
-Usuario y clave de Mongo Atlas para la base de datos.
-mongoUser=Nombre_de_Usuario_de_Mongo
+  ```bash
+   mongoUser=Nombre_de_Usuario_de_Mongo
 
-mongoKey=Clave_de_Conexion_a_Mongo
+   mongoKey=Clave_de_Conexion_a_Mongo
 
-Nombre del clouster donde se creo la base de datos y nombre de la base de datos.
-clousterName=NombreDelClousterDondeEstaAlojadaLaBd
+- Nombre del clouster donde se creo la base de datos y nombre de la base de datos.
 
-dbName=NombreDeLaBd
+   ```bash
+   clousterName=NombreDelClousterDondeEstaAlojadaLaBd
 
-Puerto que utiliza el servidor backend para levantarse:
+   dbName=NombreDeLaBd
 
-PORT=3001
+- Puerto que utiliza el servidor backend para levantarse:
+
+   ```bash
+   PORT=3001
 
 🚀 Desarrollo:
 
