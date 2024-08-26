@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/f9bc8521-1b2f-44c6-a8b9-adb223120310)
 
-🌟 Segundo proyecto del bootcamp de programación fullstack SoyHenry.
+Segundo proyecto del bootcamp de programación fullstack SoyHenry.
 
 ⭐ HomeMovies ⭐
 
